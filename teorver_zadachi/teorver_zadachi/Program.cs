@@ -240,7 +240,7 @@ namespace teorver_zadachi
             double snd2 = Equals(presnd2, fst2) ? prob2[random.Next(prob2.Count)] : presnd2;
             double thrd2 = prob2.Find(x => x != fst2 && x != snd2);
             string res = "8. Студента Зевского на лекциях по математике посещают музы: Евтерпа (муза лирической поэзии) — с вероятностью " + fst.ToString().Replace('.', ',') + "; Эрато (муза любовной поэзии) — с вероятностью " + snd.ToString().Replace('.', ',') + " и Каллиопа (муза эпической поэзии) — с вероятностью " + thrd.ToString().Replace('.', ',') + ". Известно, что после посещения соответствующей музы Зевский лирические стихи сочиняет с вероятностью " + fst2.ToString().Replace('.', ',') + ", любовные — с вероятностью " + snd2.ToString().Replace('.', ',') + " и эпические — с вероятностью " + thrd2.ToString().Replace('.', ',') + ". Какова вероятность того, что написанное Зевским на очередной лекции стихотворение было эпическим? ";
-            
+            double ans = (snd * snd2) / (fst * fst2 + snd * snd2 + thrd * thrd2);
             word.doc.InsertParagraph(res);
             word.doc.Save();
         }
