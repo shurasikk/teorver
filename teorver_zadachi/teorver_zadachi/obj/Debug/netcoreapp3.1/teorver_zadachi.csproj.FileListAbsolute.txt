@@ -1,0 +1,14 @@
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.exe
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.deps.json
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.dll
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\bin\Debug\netcoreapp3.1\teorver_zadachi.pdb
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.csproj.AssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.dll
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.pdb
+C:\Users\Asus\Documents\GitHub\teorver\teorver_zadachi\teorver_zadachi\obj\Debug\netcoreapp3.1\teorver_zadachi.genruntimeconfig.cache
