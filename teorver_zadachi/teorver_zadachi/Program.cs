@@ -333,12 +333,86 @@ namespace teorver_zadachi
 
         static double modul5_17_1_mx(double fst, double snd, double trd, double fth)
         {
+            double ans = 1 * fst + 2 * snd + 3 * trd + 4 * fth;
+            return ans;
+        }
 
+        static double modul5_17_1_dx(double fst, double snd, double trd, double fth)
+        {
+            double mx = modul5_17_1_mx(fst, snd, trd, fth);
+            double ans = 1 * fst + 2 * 2 * snd + 3 * 3 * trd + 4 * 4 * fth - mx * mx;
+            return ans;
+        }
+
+        static double modul5_17_1_sx(double fst, double snd, double trd, double fth)
+        {
+            double dx = modul5_17_1_dx(fst, snd, trd, fth);
+            double ans = Math.Sqrt(dx);
+            return ans;
+        }
+
+        static double modul6_16_1_mx(double probability)
+        {
+            double p1 = sochet(0,4)*Math.Pow(1 - probability, 4);
+            double p2 = sochet(1,4)*probability * Math.Pow(1 - probability, 3);
+            double p3 = sochet(2,4)*probability * probability * Math.Pow(1 - probability, 2);
+            double p4 = sochet(3,4)*Math.Pow(probability, 3) * (1 - probability);
+            double p5 = Math.Pow(probability, 4);
+            double ans = 0*p1 + 1*p2 + 2*p3 + 3*p4 + 4*p5;
+            return ans;
+        }
+
+        static double modul6_16_1_dx(double probability)
+        {
+            double mx = modul6_16_1_mx(probability);
+            double p1 = sochet(0, 4) * Math.Pow(1 - probability, 4);
+            double p2 = sochet(1, 4) * probability * Math.Pow(1 - probability, 3);
+            double p3 = sochet(2, 4) * probability * probability * Math.Pow(1 - probability, 2);
+            double p4 = sochet(3, 4) * Math.Pow(probability, 3) * (1 - probability);
+            double p5 = Math.Pow(probability, 4);
+            double ans = 0 * p1 + 1 * p2 + 2 * 2 * p3 + 3 * 3 * p4 + 4 * 4 * p5 - mx * mx;
+            return ans;
+        }
+        
+        static double modul6_17_1_mx(int f, int s)
+        {
+            double p = (double)f / 100;
+            double q = 1 - p;
+            double ans = 0;
+            double[] pp = new double[s+1];
+            for(int i=0;i<=s;i++)
+            {
+                pp[i] = sochet(Convert.ToUInt32(i), Convert.ToUInt32(s)) * Math.Pow(p, i) * Math.Pow(q, s - i);
+            }
+            for (int i = 0; i <= s; i++)
+            {
+                ans += i * pp[i];
+            }
+            return ans;
+        }
+
+        static double modul6_17_1_dx(int f, int s)
+        {
+            double mx = modul6_17_1_mx(f, s);
+            double p = (double)f / 100;
+            double q = 1 - p;
+            double ans = 0;
+            double[] pp = new double[s + 1];
+            for (int i = 0; i <= s; i++)
+            {
+                pp[i] = sochet(Convert.ToUInt32(i), Convert.ToUInt32(s)) * Math.Pow(p, i) * Math.Pow(q, s - i);
+            }
+            for (int i = 0; i <= s; i++)
+            {
+                ans += i*i * pp[i];
+            }
+            ans = ans - mx * mx;
+            return ans;
         }
 
         static void Main(string[] args)
         {
-            double ans = modul5_16_1_dx(0.4,0.5,0.6);
+            double ans = modul6_17_1_dx(10,5);
             Console.WriteLine(ans);
         }
     }
