@@ -302,9 +302,43 @@ namespace teorver_zadachi
             return ans;
         }
 
+        static double modul5_16_1_mx(double fst, double snd, double trd)
+        {
+            double p1 = fst;
+            double p2 = (1 - p1) * snd;
+            double p3 = (1 - p1) * (1 - p2) * trd;
+            double p4 = (1 - p1) * (1 - p2) * (1 - p3);
+            double ans = 0;
+            ans = 0 * p1 + 1 * p2 + 2 * p3 * 3 * p4;
+            return ans;
+        }
+
+        static double modul5_16_1_dx(double fst, double snd, double trd)
+        {
+            double p1 = fst;
+            double p2 = (1 - p1) * snd;
+            double p3 = (1 - p1) * (1 - p2) * trd;
+            double p4 = (1 - p1) * (1 - p2) * (1 - p3);
+            double mx = modul5_16_1_mx(fst, snd, trd);
+            double ans = 0 * p1 + 1 * p2 + 2*2 * p3 * 3*3 * p4-mx*mx;
+            return ans;
+        }
+
+        static double modul5_16_1_sx(double fst, double snd, double trd)
+        {
+            double dx = modul5_16_1_dx(fst, snd, trd);
+            double ans = Math.Sqrt(dx);
+            return ans;
+        }
+
+        static double modul5_17_1_mx(double fst, double snd, double trd, double fth)
+        {
+
+        }
+
         static void Main(string[] args)
         {
-            double ans = modul4_17_3(75,2);
+            double ans = modul5_16_1_dx(0.4,0.5,0.6);
             Console.WriteLine(ans);
         }
     }
