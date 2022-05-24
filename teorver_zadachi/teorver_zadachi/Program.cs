@@ -410,6 +410,8 @@ namespace teorver_zadachi
             return ans;
         }
 
+
+
         static void Main(string[] args)
         {
             double ans = modul6_17_1_dx(10,5);
