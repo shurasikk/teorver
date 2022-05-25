@@ -410,11 +410,117 @@ namespace teorver_zadachi
             return ans;
         }
 
+        static double modul7_16_1_mx(double prob)
+        {
+            double mx = 1000 * prob;
+            return mx;
+        }
 
+        static double modul7_17_1_mx(double prob)
+        {
+            double mx = prob * 400;
+            return mx;
+        }
+
+        static double modul8_16_1_mx(double fst, double snd, double fst2, double snd2)
+        {
+            double trd = 1 - fst - snd;
+            double mx = -1 * fst + 1 * snd + 2 * trd;
+            return mx;
+        }
+
+        static double modul8_16_1_dx(double fst, double snd, double fst2, double snd2)
+        {
+            double trd = 1 - fst - snd;
+            double mx = modul8_16_1_mx(fst, snd, fst2, snd2);
+            double dx = 1 * fst + 1 * snd + 2 * 2 * trd-mx*mx;
+            return dx;
+        }
+
+        static double modul8_16_1_my(double fst, double snd, double fst2, double snd2)
+        {
+            double my = 3 * fst2 + 5 * snd;
+            return my;
+        }
+
+        static double modul8_16_1_dy(double fst, double snd, double fst2, double snd2)
+        {
+            double my = modul8_16_1_my(fst, snd, fst2, snd2);
+            double dy = 3 * 3 * fst2 + 5 * 5 * snd2 - my * my;
+            return dy;
+        }
+
+        static double modul8_17_1_mx(double fst, double snd, double fst2, double snd2)
+        {
+            double p = 1 - fst - snd;
+            double mx = 1 * p + 2 * fst + 3 * snd;
+            return mx;
+        }
+
+        static double modul8_17_1_dx(double fst, double snd, double fst2, double snd2)
+        {
+            double p = 1 - fst - snd;
+            double mx = modul8_17_1_mx(fst,snd,fst2,snd2);
+            double dx = 1 * p + 2 * 2 * fst + 3 * 3 * snd-mx*mx;
+            return dx;
+        }
+
+        static double modul8_17_1_my(double fst, double snd, double fst2, double snd2)
+        {
+            double my = -1*fst2+4*snd2;
+            return my;
+        }
+
+        static double modul8_17_1_dy(double fst, double snd, double fst2, double snd2)
+        {
+            double my = modul8_17_1_my(fst, snd, fst2, snd2);
+            double dy = 1 * fst2 + 4 * 4 * snd2 - my * my;
+            return dy;
+        }
+
+        static double modul9_16(double alpha, double b)
+        {
+            double fa;
+            double fb;
+            if (alpha <= -2) fa = 0;
+            else fa = ((double)alpha / 4) + (double)1 / 2;
+            if (b > 2) fb = 1;
+            else fb= ((double)b / 4) + (double)1 / 2;
+            double ans = fb - fa;
+            return ans;
+        }
+
+        static double modul9_17(double alpha, double b)
+        {
+            double fa, fb;
+            if (alpha <= 0) fa = 0;
+            else fa = ((double)alpha * alpha + alpha) / 2;
+            if (b > 1) fb = 1;
+            else fb= ((double)b * b + b) / 2;
+            double ans = fb - fa;
+            return ans;
+        }
+
+        static double modul11_16_p(int alpha, int bet)
+        {
+            double pb, pa;
+            if (alpha <= 1) pa = 0;
+            else if (alpha > 1 && alpha <= 4) pa = ((double)2 / 9) * alpha;
+            else pa = ((double)14 * alpha - alpha * alpha - 22) / 27;
+            if (bet > 4 && bet <= 7) pb = ((double)14 * bet - bet * bet - 22) / 27;
+            else pb = 1;
+            double ans = pb - pa;
+            return ans;
+        }
+
+        static double modul11_16_mx(int alpha, int bet)
+        {
+
+        }
 
         static void Main(string[] args)
         {
-            double ans = modul6_17_1_dx(10,5);
+            double ans = modu11_16_p(0,5);
             Console.WriteLine(ans);
         }
     }
