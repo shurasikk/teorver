@@ -513,14 +513,229 @@ namespace teorver_zadachi
             return ans;
         }
 
+        static double f11_16_1(double x)
+        {
+            double ans = ((double)2 / 9) * x;
+            return ans;
+        }
+
+        static double integralf11_16_1(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_16_1(xi) + f11_16_1(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double f11_16_2(double x)
+        {
+            double ans = (((double)2 / 27) * (7-x))*x;
+            return ans;
+        }
+
+        static double integralf11_16_2(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_16_2(xi) + f11_16_2(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
         static double modul11_16_mx(int alpha, int bet)
         {
-
+            double mx = integralf11_16_1(1000, 1, 4) + integralf11_16_2(1000, 4, 7);
+            return mx;
         }
+
+        static double f11_16_dx1(double x)
+        {
+            double ans = ((double)2 / 9) * x*x;
+            return ans;
+        }
+
+        static double integralf11_16_dx1(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_16_dx1(xi) + f11_16_dx1(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double f11_16_dx2(double x)
+        {
+            double ans = (((double)2 / 27) * (7 - x)) * x*x;
+            return ans;
+        }
+
+        static double integralf11_16_dx2(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_16_dx2(xi) + f11_16_dx2(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double modul11_16_dx(int alpha, int bet)
+        {
+            double dx = integralf11_16_dx1(1000, 1, 4) + integralf11_16_dx2(1000, 4, 7);
+            return dx;
+        }
+
+        static double modul11_16_sx(int alpha, int bet)
+        {
+            double dx = modul11_16_dx(alpha, bet);
+            double sx = Math.Sqrt(dx);
+            return sx;
+        }
+
+        static double modul11_17_p(double alpha, double bet)
+        {
+            double pb, pa;
+            if (alpha <= 0) pa = 0;
+            else if (alpha > 0 && alpha <= 2) pa = (alpha*alpha*alpha)/20;
+            else pa = ((3*alpha)/5)-(double)4/5;
+            if (bet > 2 && bet <= 3) pb = ((3 * bet) / 5) - (double)4 / 5;
+            else pb = 1;
+            double ans = pb - pa;
+            return ans;
+        }
+
+        static double f11_17_mx1(double x)
+        {
+            double ans = ((double)3 / 20) * x*x*x;
+            return ans;
+        }
+
+        static double integralf11_17_mx1(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_17_mx1(xi) + f11_17_mx1(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double f11_17_mx2(double x)
+        {
+            double ans = ((double)3/5) * x;
+            return ans;
+        }
+
+        static double integralf11_17_mx2(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_17_mx2(xi) + f11_17_mx2(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double modul11_17_mx(int alpha, int bet)
+        {
+            double mx = integralf11_17_mx1(1000, 0, 2) + integralf11_16_2(1000, 2, 3);
+            return mx;
+        }
+
+        static double f11_17_dx1(double x)
+        {
+            double ans = ((double)3 / 20) * x * x * x * x;
+            return ans;
+        }
+
+        static double integralf11_17_dx1(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_17_dx1(xi) + f11_17_dx1(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double f11_17_dx2(double x)
+        {
+            double ans = ((double)3/5)*x*x;
+            return ans;
+        }
+
+        static double integralf11_17_dx2(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f11_17_dx2(xi) + f11_17_dx2(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double modul11_17_dx(int alpha, int bet)
+        {
+            double dx = integralf11_17_dx1(1000, 0, 2) + integralf11_17_dx2(1000, 2, 3);
+            return dx;
+        }
+
+        static double modul11_17_sx(int alpha, int bet)
+        {
+            double dx = modul11_17_dx(alpha, bet);
+            double sx = Math.Sqrt(dx);
+            return sx;
+        }
+
+
 
         static void Main(string[] args)
         {
-            double ans = modu11_16_p(0,5);
+            double ans = modul11_16_p(0,5);
             Console.WriteLine(ans);
         }
     }
