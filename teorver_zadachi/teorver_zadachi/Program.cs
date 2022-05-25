@@ -501,6 +501,61 @@ namespace teorver_zadachi
             return ans;
         }
 
+        static double f10_16(double x)
+        {
+            double ans = (double)1 / (Math.Sqrt(4 - x * x));
+            return ans;
+        }
+
+        static double integralf10_16(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f10_16(xi) + f10_16(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double modul10_16()
+        {
+            double a = (double)1 / integralf10_16(1000, -2, 2);
+            return a;
+        }
+
+        static double f10_17(double x)
+        {
+            double ans = 4 * x - x * x * x;
+            return ans;
+        }
+
+        static double integralf10_17(double n, double a, double b)
+        {
+            double h, res, sum, xi, xi1;
+            sum = 0;
+            h = (b - a) / n;
+            for (int i = 0; i < n; i++)
+            {
+                xi = a + i * h;
+                xi1 = a + (i + 1) * h;
+                sum += (f10_17(xi) + f10_17(xi1));
+            }
+            res = sum * h / 2;
+            return res;
+        }
+
+        static double modul10_17()
+        {
+            double a = (double)1 / integralf10_17(1000, 0, 2);
+            return a;
+        }
+
+
         static double modul11_16_p(int alpha, int bet)
         {
             double pb, pa;
@@ -734,20 +789,20 @@ namespace teorver_zadachi
         static double modul12_16(int num)
         {
             //(a=0;b=num)
-            double ans = 1-Math.Abs((Laplas(((double)num - 10) / 1.5) - Laplas(0);
+            double ans = 1-Math.Abs((Laplas(((double)num - 10) / 1.5) - Laplas(0)));
             return ans;
         }
 
         static double modul12_17(int num)
         {
             //(a=0;b=num)
-            double ans = 1 - Math.Abs((Laplas(((double)num - 80) / 6) - Laplas(0));
+            double ans = 1 - Math.Abs((Laplas(((double)num - 80) / 6) - Laplas(0)));
             return ans;
         }
 
         static void Main(string[] args)
         {
-            double ans = modul12_16(12);
+            double ans = modul10_17();
             Console.WriteLine(ans);
         }
     }
