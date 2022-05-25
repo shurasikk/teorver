@@ -409,7 +409,133 @@ namespace teorver_zadachi
             ans = ans - mx * mx;
             return ans;
         }
-
+public double module16_20(double prob)
+        {
+            double b = 10 * (0.1 - prob);
+            return b - 10 * prob;
+        }
+        public string module17_20(double prob)
+        {
+            double pref1 = prob / 2;
+            double pref2 = Laplas(pref1);
+            double beta = pref2 * 0.2;
+            double A = 5 - beta;
+            double B = 5 + beta;
+            return A.ToString() + " <X< " + B.ToString();
+        }
+        public double module16_19(int a,int b)
+        {
+            int f1 = (b - 50) / 250;
+            int f2 = (a - 50) / 250;
+            double resf;
+            if (f2<0)
+            {
+                double posf2 = f2 * -1;
+                resf = Laplas(f1) + Laplas(posf2);
+            }
+            else resf= Laplas(f1) - Laplas(f2);
+            return resf;
+        }
+        public double module17_19(int h)
+        {
+            double degree = -0.002 * h;
+            double res = Math.Pow(Math.E, degree);
+            return res;
+        }
+        public string module16_4(double pr1,double pr2, char a, char b, char c)
+        {
+            double proba = pr1 * pr2;
+            double preprobb = 1-(1-pr2) *(1- pr1);
+            double probb = preprobb > 1 ? 1 : preprobb;
+            double probc = 1 - pr2;
+            string fst="", snd="", trd="";
+            switch(a)
+            {
+                case 'в':
+                    fst = "a) " + proba.ToString();
+                    break;
+                case 'у':
+                    fst ="a) "+probb.ToString();
+                    break;
+                case 'н':
+                    fst ="a) "+probc.ToString();
+                    break;
+            }
+            switch(b)
+            {
+                case 'в':
+                    snd = "b) " + proba.ToString();
+                    break;
+                case 'у':
+                    snd = "b) " + probb.ToString();
+                    break;
+                case 'н':
+                    snd = "b) " + probc.ToString();
+                    break;
+            }
+            switch (b)
+            {
+                case 'в':
+                    snd = "б) " + proba.ToString();
+                    break;
+                case 'у':
+                    snd = "б) " + probb.ToString();
+                    break;
+                case 'н':
+                    snd = "б) " + probc.ToString();
+                    break;
+            }
+            switch (c)
+            {
+                case 'в':
+                    trd = "в) " + proba.ToString();
+                    break;
+                case 'у':
+                    trd = "в) " + probb.ToString();
+                    break;
+                case 'н':
+                    trd = "в) " + probc.ToString();
+                    break;
+            }
+            return fst + "\n" + snd + "\n" + trd;
+        }
+        public double module16_5(double prob1, double prob2,char a)
+        {
+            double res = 0;
+            if (a =='п')
+            {
+                double p1 = prob1 * (1 - prob1) * (1 - prob2);
+                double p2 = Math.Pow(prob1, 2) * (1 - prob1) * (1 - prob2) * (1 + prob2);
+                double p3 = Math.Pow(prob1, 3) * ((1 - prob2) * (1 + prob2) + Math.Pow(prob2, 2) * (1 - prob2));
+            }
+            else
+            {
+                double p1=prob2*(1-prob2)*(1-prob1);
+                double p2 = Math.Pow(prob2, 2) * (1 - prob2) * (1 - prob1) * (1 + prob1);
+                double p3 = Math.Pow(prob2, 3) * ((1 - prob1) * (1 + prob1) + Math.Pow(prob1, 2) * (1 - prob1));
+                res = p1 + p2 + p3;
+            }
+            return Math.Round(res,3);
+        }
+        public string module17_4(double pr1, double pr2, char a, char b)
+        {
+            double pra = 0;
+            if (a == 'п') pra = pr1 * pr2;
+            else pra=(1-pr1)*(1-pr2);
+            double prb = 1 - (pr1 * pr2);
+            double prc = 0;
+            if (b == 'п') prc = (1 - pr1) * pr2;
+            else prc = pr1 * (1 - pr2);
+            return "а) " + pra.ToString() + "\nб) " + prb.ToString() + "\nв) " + prc.ToString();
+        }
+        public double module17_5(double pr1,double pr2,double pr11,double pr22)
+        {
+            double p1 = pr1 * (1 - pr11) * (1 - pr2)*(1-pr22);
+            double p2 = pr11 * (1 - pr1) * (1 - pr2) * (1 - pr22);
+            double p3 = pr1*pr11 * (1 - pr2) * pr22;
+            double p4 = pr1 * pr11 * (1 - pr22) * pr2;
+            return p1 + p2 + p3 + p4;
+        }
 
 
         static void Main(string[] args)
