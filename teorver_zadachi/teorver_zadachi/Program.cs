@@ -731,11 +731,23 @@ namespace teorver_zadachi
             return sx;
         }
 
+        static double modul12_16(int num)
+        {
+            //(a=0;b=num)
+            double ans = 1-Math.Abs((Laplas(((double)num - 10) / 1.5) - Laplas(0);
+            return ans;
+        }
 
+        static double modul12_17(int num)
+        {
+            //(a=0;b=num)
+            double ans = 1 - Math.Abs((Laplas(((double)num - 80) / 6) - Laplas(0));
+            return ans;
+        }
 
         static void Main(string[] args)
         {
-            double ans = modul11_16_p(0,5);
+            double ans = modul12_16(12);
             Console.WriteLine(ans);
         }
     }
